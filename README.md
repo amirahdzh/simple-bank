@@ -14,4 +14,4 @@ This is the database schema for this project: <br>
 ![Database Schema](readme/db_scheme.png) <br>
 or you can access is directly [here](https://dbdiagram.io/d/Simple-Bank-678a4ceb6b7fa355c336c916).
 
-### to be continued
+### to be continued~
