@@ -10,8 +10,8 @@ import (
 	"github.com/techschool/simplebank/util"
 )
 
-// CreateRandomAccount doesn't have "Test" prefix, so it won't be run as unit test
-func CreateRandomAccount(t *testing.T) Account {
+// createRandomAccount doesn't have "Test" prefix, so it won't be run as unit test
+func createRandomAccount(t *testing.T) Account {
 	arg := CreateAccountParams{
 		Owner:    util.RandomOwner(),
 		Balance:  util.RandomMoney(),
@@ -32,11 +32,11 @@ func CreateRandomAccount(t *testing.T) Account {
 }
 
 func TestCreateAccount(t *testing.T) {
-	CreateRandomAccount(t)
+	createRandomAccount(t)
 }
 
 func TestGetAccount(t *testing.T) {
-	account1 := CreateRandomAccount(t)
+	account1 := createRandomAccount(t)
 	account2, err := testQueries.GetAccount(context.Background(), account1.ID)
 	require.NoError(t, err)
 	require.NotEmpty(t, account2)
@@ -48,7 +48,7 @@ func TestGetAccount(t *testing.T) {
 }
 
 func TestUpdateAccount(t *testing.T) {
-	account1 := CreateRandomAccount(t)
+	account1 := createRandomAccount(t)
 	arg := UpdateAccountParams{
 		ID:      account1.ID,
 		Balance: account1.Balance,
@@ -65,7 +65,7 @@ func TestUpdateAccount(t *testing.T) {
 }
 
 func TestDeleteAccount(t *testing.T) {
-	account1 := CreateRandomAccount(t)
+	account1 := createRandomAccount(t)
 	err := testQueries.DeleteAccount(context.Background(), account1.ID)
 	require.NoError(t, err)
 
@@ -77,7 +77,7 @@ func TestDeleteAccount(t *testing.T) {
 
 func TestListAccount(t *testing.T) {
 	for i := 0; i < 10; i++ {
-		CreateRandomAccount(t)
+		createRandomAccount(t)
 	}
 
 	arg := ListAccountsParams{
