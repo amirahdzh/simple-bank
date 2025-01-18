@@ -10,8 +10,8 @@ Go-Lang, Postgres, Redis, Gin, gRPC, Kubernetes, AWS, CI/CD <br>
 <i>on development...</i>
 
 ## Database Schema
-This is the database schema for this project: <br>
+This is the database schema for this project: <br><br>
 ![Database Schema](readme/db_schema.png) <br>
-or you can access is directly [here](https://dbdiagram.io/d/Simple-Bank-678a4ceb6b7fa355c336c916).
+or you can access it directly [here](https://dbdiagram.io/d/Simple-Bank-678a4ceb6b7fa355c336c916).
 
 ### to be continued~
